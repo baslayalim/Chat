@@ -1670,6 +1670,29 @@
         "build": {
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "client/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "server": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/client.dll": {}
+        }
+      },
+      "server/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/server.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/server.dll": {}
+        }
       }
     }
   },
@@ -5966,12 +5989,24 @@
         "xunit.runner.visualstudio.2.4.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "client/1.0.0": {
+      "type": "project",
+      "path": "../client/client.csproj",
+      "msbuildProject": "../client/client.csproj"
+    },
+    "server/1.0.0": {
+      "type": "project",
+      "path": "../server/server.csproj",
+      "msbuildProject": "../server/server.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.NET.Test.Sdk >= 17.1.0",
+      "client >= 1.0.0",
       "coverlet.collector >= 3.1.2",
+      "server >= 1.0.0",
       "xunit >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.3"
     ]
@@ -6002,7 +6037,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Projeler\\GitHub\\Chat\\client\\client.csproj": {
+              "projectPath": "D:\\Projeler\\GitHub\\Chat\\client\\client.csproj"
+            },
+            "D:\\Projeler\\GitHub\\Chat\\server\\server.csproj": {
+              "projectPath": "D:\\Projeler\\GitHub\\Chat\\server\\server.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
